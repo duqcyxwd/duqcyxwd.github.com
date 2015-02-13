@@ -1,8 +1,0 @@
----
-layout: post
-title: "Rails on Ruby 与 Sublime Text 在Windows下的终极设置"
-description: ""
-category: 
-tags: []
----
-{% include JB/setup %}

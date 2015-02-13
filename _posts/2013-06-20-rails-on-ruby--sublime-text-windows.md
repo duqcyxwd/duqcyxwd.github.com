@@ -2,12 +2,12 @@
 layout: post
 title: "Rails on Ruby 与 Sublime Text 在Windows下的终极设置"
 description: ""
-category: 
-tags: []
+category: Coding
+tags: [Sublime, Rails on ruby, Config, Windows]
 ---
 {% include JB/setup %}
 
-最近开始学习Rails on Ruby，花了很多时间去调配sublime。在这里分享一下自己是如何设置sublime的，希望对大家能有用。
+最近开始学习Rails on Ruby，花了很多时间去调配 Sublime。在这里分享一下自己是如何设置sublime的，希望对大家能有用。
 
 ##安装Rails on ruby
 因为我是用windows，在ror官网直接下的`windows Installer`,这个程序会帮你配置好你的Environment。这是目前就直接和方便的设置RoR环境的方法。
