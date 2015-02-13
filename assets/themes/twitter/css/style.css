@@ -6,8 +6,44 @@
 .container-narrow > hr {
   margin: 30px 0; }
 
+
+
 .navbar .nav {
   float: right; }
+
+.navbar a.zocial {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.zocial.googleplus:focus,
+.zocial.googleplus:hover {
+  color: #e01d30 !important;
+}
+
+.zocial.twitter:focus,
+.zocial.twitter:hover {
+  color: #46c0fb !important;
+}
+
+.zocial.linkedin:focus,
+.zocial.linkedin:hover {
+  color: #50a1cb !important;
+}
+
+.navbar a.zocial {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.navbar ul.social {
+}
+@media (min-width: 240px) and (max-width: 979px) {
+  /* line 7, ../_sass/_responsive.scss */
+  .navbar ul.social {
+    display: none !important;
+  }
+}
 
 /* posts index */
 .post > h3.title {
