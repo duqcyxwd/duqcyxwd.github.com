@@ -1,0 +1,98 @@
+---
+layout: post
+title: "Use unbuntu on VitualBox to host ruby server for development"
+description: ""
+category: 
+tags: []
+---
+{% include JB/setup %}
+
+#Rails Ubuntu VitualBox 在 Windows 上的设置
+
+一直在Windows下学习ROR，环境设置挺让人头疼的。电脑之前被我用Ubuntu搞崩过，用wubi再也装不上ubuntu了，而且Windows上很多很好的软件，根本舍不得放弃Windows。纠结了好久，突然想到了一个用虚拟机开发的办法。**在虚拟机上装linux系统，然后通过共享文件夹的方式在虚拟机内运行Rails Server, 之后再在Windows环境下用浏览器进行浏览**
+
+上网搜了一下，还是有人用这种方法开发的， 自己就稍微整理了一下在里面会遇到的问题。
+
+##Guest Additions
+点击虚拟机菜单`Device`下的`install Guest Additions`就可直接安装。安装完后需要重启虚拟机
+
+![][img1]
+
+安装这个插件可以允许你做很多很方便的事。和Windows共享文件夹也是其中的一种。
+
+Seamless Model 快捷键 `Host+L` 这个model把虚拟机桌面最小化，只留下正在允许的窗口
+![][img3]
+
+Auto-resize Guest Display 快捷键 `Host+G`  这个model可以把虚拟机的桌面调至任意的大小，用起来很方便
+![][img2]
+
+##共享文件夹
+
+	$ sudo mkdir ~/work
+	$ sudo mount -t vboxsf win_work ~/work
+
+gksudo gedit /etc/init.d/rc.local
+
+sudo mount -t vboxsf Shared /media/windows
+
+
+###相关资源
+[Windows Ubuntu Shared Folder](https://www.evernote.com/shard/s97/sh/83e6a559-4d91-4e58-be55-f69ebec43f23/cc17141aeeb2c43512712412cc3a2f8f)
+
+[Windows 下开发 Ruby on Rails 慢？用虚拟机来运行它吧！](http://huacnlee.com/blog/speed-up-windows-development-ruby-on-rails/)
+
+[GET POSTGRES WORKING ON UBUNTU OR LINUX MINT](http://blog.deliciousrobots.com/2011/12/13/get-postgres-working-on-ubuntu-or-linux-mint/)
+
+[Installing VirtualBox Guest Additions on Ubuntu Server 10.04](http://mylinuxramblings.wordpress.com/2010/06/03/installing-virtualbox-guest-additions-on-ubuntu-server-10-04/)
+
+
+##在Windows下浏览Ror网页
+	ifconfig
+
+查询地址
+
+VitualBox 
+
+>sudo aptitude install libpq-dev
+You need install the postgreSQL dev package with header of PostgreSQL
+
+[link](http://stackoverflow.com/questions/3116015/how-to-install-gem-pg-on-ubuntu)
+
+
+##Setup postgres
+
+>sudo apt-get install postgresql
+
+>sudo -u postgres psql postgres
+
+>\password postgres
+
+postgres is user name 
+
+>sudo -u postgres createdb mydb
+
+or in ROR file location
+
+>rake db:create
+
+[PostgreSQL](https://help.ubuntu.com/community/PostgreSQL#Administration)
+
+```ruby
+require 'redcarpet'
+markdown = Redcarpet.new("Hello World!")
+puts markdown.to_html
+```
+
+
+## Other related material
+
+1. [Dealing with line endings](https://help.github.com/articles/dealing-with-line-endings#platform-all)
+
+2. [Ubuntu set color for Ubuntu Terminal](http://git-scm.com/book/en/Customizing-Git-Git-Configuration)
+
+	git config --global color.ui true
+
+
+[img1]: https://dl.dropboxusercontent.com/u/58367953/Picture%20Source/Rails%20Ubunutu%20Vitualbox/1.png
+[img2]: https://dl.dropboxusercontent.com/u/58367953/Picture%20Source/Rails%20Ubunutu%20Vitualbox/2.png
+[img3]: https://dl.dropboxusercontent.com/u/58367953/Picture%20Source/Rails%20Ubunutu%20Vitualbox/3.png
