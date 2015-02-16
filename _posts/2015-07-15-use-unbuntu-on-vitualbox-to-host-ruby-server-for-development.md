@@ -2,8 +2,8 @@
 layout: post
 title: "Use unbuntu on VitualBox to host ruby server for development"
 description: ""
-category: 
-tags: []
+category: Coding
+tags: [ruby unbuntu]
 ---
 {% include JB/setup %}
 
