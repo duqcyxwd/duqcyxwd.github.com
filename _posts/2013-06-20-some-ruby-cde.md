@@ -68,7 +68,6 @@ More ruby code
 
 Hi
 
-{% gist 5555251 %}
 
 {% highlight ruby %}
 def foo
